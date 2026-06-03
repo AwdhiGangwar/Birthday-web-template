@@ -1,0 +1,96 @@
+/**
+ * GLOBAL STYLES
+ * Application-wide CSS with animations and utilities
+ */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove default scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(229, 9, 20);
+  border-radius: 10px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(244, 6, 18);
+  background-clip: content-box;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-color: rgb(229, 9, 20) transparent;
+  scrollbar-width: thin;
+}
+
+/* Selection styling */
+::selection {
+  background-color: rgb(229, 9, 20);
+  color: white;
+}
+
+::-moz-selection {
+  background-color: rgb(229, 9, 20);
+  color: white;
+}
+
+/* Focus ring styling */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid rgb(229, 9, 20);
+  outline-offset: 2px;
+}
+
+/* Smooth transitions for color changes */
+* {
+  @apply transition-colors duration-300;
+}
+
+/* Remove transition from animated elements */
+.animate-fadeIn,
+.animate-slideIn,
+.animate-scale {
+  @apply transition-none;
+}
+
+/* Custom button hover glow */
+button.glow:hover {
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+}
+
+/* Prevent layout shift from scrollbar */
+html {
+  overflow-y: scroll;
+}
+
+/* Smooth page transitions */
+@keyframes pageIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+main {
+  animation: pageIn 0.5s ease-out;
+}
